@@ -55,6 +55,29 @@ This script implements a movie recommender system that provides users with movie
 
 - **Pickle Files:** The system relies on two pickle files for its operation. The movie_dict.pkl file contains a dictionary representation of the movie dataset, and similarity.pkl stores the similarity matrix. These files are loaded at runtime, enabling the recommender system to quickly access precomputed data.
 
+**Regarding Procfile:**
+
+**About this file**
+
+- A Procfile is a file used in Heroku deployments to specify the commands that are executed by the app on startup. Below is an example of a Procfile and a description of its contents:
+
+**CODE** - web: sh setup.sh && streamlit run app.py
+
+**Description**: web: Indicates that this process type is for handling web traffic.
+
+**gunicorn**: Stands for Green Unicorn, a popular HTTP server for Python applications.
+
+**your_app_module:app:** Specifies the Python module and the WSGI application object that Gunicorn should run. Replace your_app_module with the actual name of your application module, and app with the name of the WSGI application object.
+
+- This Procfile is essential for deploying a Python web application on Heroku. It tells Heroku how to run your application using Gunicorn as the HTTP server. Ensure that you have Gunicorn included in your requirements.txt or Pipfile if you're using Pipenv.
+
+**gitignore file:**
+
+- A .gitignore file is used to specify intentionally untracked files that Git should ignore. When working with Kaggle datasets in a Git repository, it's important to exclude large files and datasets that are already stored on Kaggle and can be accessed through Kaggle Kernels or Scripts.
+
+#To ignore virtual network
+venv
+
 **Conclusion**
 
 This Streamlit application demonstrates an effective use of Python for building interactive data applications. By combining the simplicity of Streamlit with the power of machine learning and data processing, it offers an engaging way for users to discover movies similar to their tastes. The inclusion of movie posters fetched from an external API further enriches the user experience, making the recommendations more tangible and visually appealing.
